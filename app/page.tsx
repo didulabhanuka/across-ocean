@@ -123,7 +123,7 @@ function TypewriterLine({
 const CFG = {
   herName: "Kavindi",
   since: "2024-06-01T00:00:00+05:30",
-  nextMeet: "2026-03-20T12:00:00+08:00", // change to your real date/time
+  nextMeet: "2026-04-01T12:00:00+08:00", // change to your real date/time
   points: {
     sriLanka: { name: "Sri Lanka", lat: 6.9271, lng: 79.8612 },
     maldives: { name: "Maldives", lat: 4.1755, lng: 73.5093 },
@@ -354,7 +354,7 @@ export default function Page() {
           <div className="space-y-4">
             <Header title="Calm confidence." sub="Time keeps counting • distance keeps losing" />
 
-            <div className="grid gap-3">
+            <div className="mt-8 grid gap-3">
               <Stat label="❤️ Days since 01 June 2024" value={`${daysSince} days`} />
               <Stat label="🌊 Distance between us" value={`${Math.round(distanceKm)} km`} />
               <Stat
@@ -387,7 +387,7 @@ export default function Page() {
           <div className="space-y-4">
             <Header title="Say it like you mean it." sub="Controlled heat • clean words" />
 
-            <div className="glass rounded-3xl p-3 shadow-soft">
+            <div className="mt-8 glass rounded-3xl p-3 shadow-soft">
               {/* Premium scroll mask */}
               <div className="relative">
                 <div className="max-h-[62svh] overflow-y-auto overscroll-contain pr-2">
@@ -454,9 +454,10 @@ export default function Page() {
         {/* 3D GLOBE (REAL) */}
         <Section id="globe">
           <div className="space-y-4">
+
             <Header title="Plans, not fantasies." sub="Our world • our route • tap and feel it" />
 
-            <div className="glass rounded-3xl p-3 shadow-soft">
+            <div className="mt-8 glass rounded-3xl p-3 shadow-soft">
               <div style={{ height: 420, borderRadius: 18, overflow: "hidden" }}>
                 <GlobeExperience points={CFG.points} />
               </div>
@@ -727,7 +728,7 @@ function TypewriterBlock({
   }, [textKey, lines, speedMs, pauseMs, onDone]);
 
   return (
-    <div className="glass rounded-2xl px-4 py-4 border border-white/10 shadow-[0_14px_55px_rgba(0,0,0,0.55)]">
+    <div className="glass rounded-2xl px-4 py-4 border border-white/10 ">
       <div className="text-white/90 text-sm leading-relaxed whitespace-pre-line">
         {out}
         <span
@@ -775,12 +776,12 @@ function Finale({ herName }: { herName: string }) {
         "You’re not just a chapter — you’re the whole story.",
         "The one I’ll never put down.",
         "",
-        "When I see you again,",
+        "When i'm going to see you,",
         "I’m pulling you in so close there’s no space left between us.",
         "And I’m not letting go.",
         "",
         "Happy Valentine’s Day.",
-        "You’re my favorite everything. 💋",
+        "You’re my favorite everything.",
     ],
     [herName]
   );
@@ -791,7 +792,7 @@ function Finale({ herName }: { herName: string }) {
     <div className="space-y-4">
       <Header title="One last scene." sub="Hold to unlock • Valentine reveal" />
 
-      <div className="glass relative overflow-hidden rounded-3xl p-6 shadow-soft">
+      <div className="mt-8 glass relative overflow-hidden rounded-3xl p-6 shadow-soft">
         <div
           className="absolute inset-0 opacity-60"
           style={{
@@ -846,12 +847,33 @@ function Finale({ herName }: { herName: string }) {
               transition={{ duration: 0.55 }}
               className="space-y-4"
             >
-              <TypewriterBlock
+              {/* <TypewriterBlock
                 speedMs={26}
                 pauseMs={520}
                 lines={finaleLines}
                 onDone={handleTypedDone}
-              />
+              /> */}
+<div className="glass rounded-3xl p-3">
+  <div className="relative">
+    <div className="h-[25svh] rounded-2xl overflow-y-auto overscroll-contain pr-2">
+      <TypewriterBlock
+        speedMs={26}
+        pauseMs={520}
+        lines={finaleLines}
+        onDone={handleTypedDone}
+      />
+    </div>
+
+    {/* top/bottom fade */}
+    <div
+      className="pointer-events-none absolute inset-x-0 top-0 h-10"
+    />
+    <div
+      className="pointer-events-none absolute inset-x-0 bottom-0 h-10"
+    />
+  </div>
+</div>
+
 
               {typedDone && (
                 <motion.div
