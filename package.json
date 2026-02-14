@@ -1,0 +1,49 @@
+{
+  "name": "across-ocean",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.34.0",
+    "lottie-react": "^2.4.1",
+    "mapbox-gl": "^3.18.1",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-globe.gl": "^2.37.0",
+    "three": "^0.182.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.182.0",
+    "autoprefixer": "^10.4.24",
+    "babel-plugin-react-compiler": "1.0.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5"
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didulabhanuka/across-ocean.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/didulabhanuka/across-ocean/issues"
+  },
+  "homepage": "https://github.com/didulabhanuka/across-ocean#readme"
+}

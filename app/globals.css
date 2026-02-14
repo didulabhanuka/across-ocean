@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root { color-scheme: dark; }
+
+html, body { height: 100%; }
+
+body {
+  background:
+    radial-gradient(1200px 900px at 50% 0%, rgba(190, 0, 80, 0.18), transparent 55%),
+    radial-gradient(900px 700px at 10% 30%, rgba(90, 0, 255, 0.18), transparent 60%),
+    radial-gradient(900px 700px at 90% 35%, rgba(0, 150, 255, 0.12), transparent 60%),
+    linear-gradient(180deg, #05060a 0%, #05060a 40%, #070713 100%);
+  overflow: hidden;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(14px);
+}
+
+.noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+@keyframes microshake {
+  0%,100% { transform: translate(0,0); }
+  20% { transform: translate(0.5px, -0.6px); }
+  40% { transform: translate(-0.8px, 0.4px); }
+  60% { transform: translate(0.6px, 0.6px); }
+  80% { transform: translate(-0.4px, -0.5px); }
+}
+
+*::-webkit-scrollbar { width: 10px; }
+*::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
+*::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+}
+
+@keyframes floaty {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes pulseSoft {
+  0%,100% { transform: scale(1); opacity: 0.78; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+.country-toast {
+  pointer-events: none;
+  transform: translate(-50%, -120%);
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 55px rgba(0,0,0,0.55);
+  color: rgba(255,255,255,0.92);
+  max-width: 240px;
+  animation: toastIn 0.18s ease-out;
+}
+
+.country-toast .title {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.country-toast .line {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, -105%) scale(0.98); }
+  to   { opacity: 1; transform: translate(-50%, -120%) scale(1); }
+}
