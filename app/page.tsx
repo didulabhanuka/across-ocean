@@ -919,7 +919,7 @@ function Finale({ herName }: { herName: string }) {
         </div>
       </div>
 
-      <div className="text-center text-xs text-white/40">Final scene — designed to replay.</div>
+      <div className="text-center text-xs text-white/40">Made with love.</div>
     </div>
   );
 }
